@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>写在前面 | james9527的前端日志</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="https://github.githubassets.com/favicon.ico">
+    <meta name="description" content="欢迎访问我的前端日志~">
+    <meta name="theme-color" content="#3eaf7c">
+    
+    <link rel="preload" href="/assets/css/0.styles.323fc85a.css" as="style"><link rel="preload" href="/assets/js/app.283f9e00.js" as="script"><link rel="preload" href="/assets/js/2.cf4fc302.js" as="script"><link rel="preload" href="/assets/js/63.572df829.js" as="script"><link rel="prefetch" href="/assets/js/10.57db1124.js"><link rel="prefetch" href="/assets/js/11.9a8c3416.js"><link rel="prefetch" href="/assets/js/12.36137e9b.js"><link rel="prefetch" href="/assets/js/13.b2004519.js"><link rel="prefetch" href="/assets/js/14.659dc65b.js"><link rel="prefetch" href="/assets/js/15.2652d2db.js"><link rel="prefetch" href="/assets/js/16.d6c5f911.js"><link rel="prefetch" href="/assets/js/17.d4188079.js"><link rel="prefetch" href="/assets/js/18.e75dbabc.js"><link rel="prefetch" href="/assets/js/19.9a44ab06.js"><link rel="prefetch" href="/assets/js/20.a725d8a9.js"><link rel="prefetch" href="/assets/js/21.19d529db.js"><link rel="prefetch" href="/assets/js/22.6531ba33.js"><link rel="prefetch" href="/assets/js/23.e896325e.js"><link rel="prefetch" href="/assets/js/24.5b2997d9.js"><link rel="prefetch" href="/assets/js/25.8132ce56.js"><link rel="prefetch" href="/assets/js/26.d82843cc.js"><link rel="prefetch" href="/assets/js/27.755801db.js"><link rel="prefetch" href="/assets/js/28.e0f2fe42.js"><link rel="prefetch" href="/assets/js/29.9e3e964e.js"><link rel="prefetch" href="/assets/js/3.4f1bfa5f.js"><link rel="prefetch" href="/assets/js/30.0d93d8c0.js"><link rel="prefetch" href="/assets/js/31.5a258105.js"><link rel="prefetch" href="/assets/js/32.01eccdfc.js"><link rel="prefetch" href="/assets/js/33.8bdc1d13.js"><link rel="prefetch" href="/assets/js/34.42dd9500.js"><link rel="prefetch" href="/assets/js/35.068b72f2.js"><link rel="prefetch" href="/assets/js/36.9a71a693.js"><link rel="prefetch" href="/assets/js/37.0fb0d67b.js"><link rel="prefetch" href="/assets/js/38.ddc45527.js"><link rel="prefetch" href="/assets/js/39.27efda84.js"><link rel="prefetch" href="/assets/js/4.dee10380.js"><link rel="prefetch" href="/assets/js/40.6a51707b.js"><link rel="prefetch" href="/assets/js/41.01317f9f.js"><link rel="prefetch" href="/assets/js/42.53532a55.js"><link rel="prefetch" href="/assets/js/43.2bc63cb8.js"><link rel="prefetch" href="/assets/js/44.98288f4e.js"><link rel="prefetch" href="/assets/js/45.3e342d9d.js"><link rel="prefetch" href="/assets/js/46.9f2f2178.js"><link rel="prefetch" href="/assets/js/47.ed65ba47.js"><link rel="prefetch" href="/assets/js/48.eeb0142e.js"><link rel="prefetch" href="/assets/js/49.14392009.js"><link rel="prefetch" href="/assets/js/5.8ac07946.js"><link rel="prefetch" href="/assets/js/50.d5ff2da0.js"><link rel="prefetch" href="/assets/js/51.dcb0a9fc.js"><link rel="prefetch" href="/assets/js/52.e82abfb9.js"><link rel="prefetch" href="/assets/js/53.763c3c23.js"><link rel="prefetch" href="/assets/js/54.ab02438d.js"><link rel="prefetch" href="/assets/js/55.ac67b7a9.js"><link rel="prefetch" href="/assets/js/56.73c510d5.js"><link rel="prefetch" href="/assets/js/57.1509ddd1.js"><link rel="prefetch" href="/assets/js/58.e3a68eb7.js"><link rel="prefetch" href="/assets/js/59.1146655a.js"><link rel="prefetch" href="/assets/js/6.6de9bd08.js"><link rel="prefetch" href="/assets/js/60.a9097dd5.js"><link rel="prefetch" href="/assets/js/61.fa9e23f4.js"><link rel="prefetch" href="/assets/js/62.37d68d68.js"><link rel="prefetch" href="/assets/js/64.1b72b1c0.js"><link rel="prefetch" href="/assets/js/65.fd79b640.js"><link rel="prefetch" href="/assets/js/66.9b2fff6b.js"><link rel="prefetch" href="/assets/js/67.04661d8a.js"><link rel="prefetch" href="/assets/js/68.fe48f321.js"><link rel="prefetch" href="/assets/js/69.36199326.js"><link rel="prefetch" href="/assets/js/7.353968d1.js"><link rel="prefetch" href="/assets/js/70.5168cc3f.js"><link rel="prefetch" href="/assets/js/71.ab3249b5.js"><link rel="prefetch" href="/assets/js/72.39dfcf5c.js"><link rel="prefetch" href="/assets/js/8.2ec57bc2.js"><link rel="prefetch" href="/assets/js/9.841d4d9d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.323fc85a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">james9527的前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人简历" class="dropdown-title"><span class="title">个人简历</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人简历" class="mobile-dropdown-title"><span class="title">个人简历</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/about/me.html" class="nav-link">
+  自我介绍&amp;项目经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/basic/js.html" class="nav-link">
+  前端基础JS系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/basic/css.html" class="nav-link">
+  前端基础CSS系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端进阶" class="dropdown-title"><span class="title">前端进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端进阶" class="mobile-dropdown-title"><span class="title">前端进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/advanced/js.html" class="nav-link">
+  Javascript进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/css.html" class="nav-link">
+  CSS进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/node.html" class="nav-link">
+  Node.js进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/performance.html" class="nav-link">
+  性能优化系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><span class="title">前端工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工程化" class="mobile-dropdown-title"><span class="title">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-principle.html" class="nav-link">
+  Webpack核心概念
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/vue-cli.html" class="nav-link">
+  vue-cli中webpack相关配置
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-bug-list.html" class="nav-link">
+  Webpack踩坑清单
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="业务沉淀" class="dropdown-title"><span class="title">业务沉淀</span> <span class="arrow down"></span></button> <button type="button" aria-label="业务沉淀" class="mobile-dropdown-title"><span class="title">业务沉淀</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/work/nuxt-notes.html" class="nav-link">
+  Nuxt重构电商M站踩坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/sensors-analyse.html" class="nav-link">
+  神策数据分析简介及其应用
+</a></li><li class="dropdown-item"><!----> <a href="/blog/scratch/material.html" class="nav-link">
+  深入scratch
+</a></li><li class="dropdown-item"><!----> <a href="/blog/skulpt/introduce.html" class="nav-link">
+  深入skulpt
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/video-autoplay.html" class="nav-link">
+  H5支持Video视频自动播放技术调研
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-vue.html" class="nav-link">
+  运营侧权限控制（Vue版）
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-react.html" class="nav-link">
+  运营侧权限控制（React版）
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/work/home.html" class="nav-link">
+  前端开发手册
+</a></div><div class="nav-item"><a href="/blog/bookmark/home.html" class="nav-link">
+  常用网址
+</a></div><div class="nav-item"><a href="https://github.com/james9527" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人简历" class="dropdown-title"><span class="title">个人简历</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人简历" class="mobile-dropdown-title"><span class="title">个人简历</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/about/me.html" class="nav-link">
+  自我介绍&amp;项目经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/basic/js.html" class="nav-link">
+  前端基础JS系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/basic/css.html" class="nav-link">
+  前端基础CSS系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端进阶" class="dropdown-title"><span class="title">前端进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端进阶" class="mobile-dropdown-title"><span class="title">前端进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/advanced/js.html" class="nav-link">
+  Javascript进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/css.html" class="nav-link">
+  CSS进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/node.html" class="nav-link">
+  Node.js进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/performance.html" class="nav-link">
+  性能优化系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><span class="title">前端工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工程化" class="mobile-dropdown-title"><span class="title">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-principle.html" class="nav-link">
+  Webpack核心概念
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/vue-cli.html" class="nav-link">
+  vue-cli中webpack相关配置
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-bug-list.html" class="nav-link">
+  Webpack踩坑清单
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="业务沉淀" class="dropdown-title"><span class="title">业务沉淀</span> <span class="arrow down"></span></button> <button type="button" aria-label="业务沉淀" class="mobile-dropdown-title"><span class="title">业务沉淀</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/work/nuxt-notes.html" class="nav-link">
+  Nuxt重构电商M站踩坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/sensors-analyse.html" class="nav-link">
+  神策数据分析简介及其应用
+</a></li><li class="dropdown-item"><!----> <a href="/blog/scratch/material.html" class="nav-link">
+  深入scratch
+</a></li><li class="dropdown-item"><!----> <a href="/blog/skulpt/introduce.html" class="nav-link">
+  深入skulpt
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/video-autoplay.html" class="nav-link">
+  H5支持Video视频自动播放技术调研
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-vue.html" class="nav-link">
+  运营侧权限控制（Vue版）
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-react.html" class="nav-link">
+  运营侧权限控制（React版）
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/work/home.html" class="nav-link">
+  前端开发手册
+</a></div><div class="nav-item"><a href="/blog/bookmark/home.html" class="nav-link">
+  常用网址
+</a></div><div class="nav-item"><a href="https://github.com/james9527" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="写在前面"><a href="#写在前面" class="header-anchor">#</a> 写在前面</h2> <blockquote><p>本篇是在项目部署期间做的一些笔记，以代码为主(文中域名均为虚构)</p></blockquote> <h2 id="nuxt支持的发布部署方式"><a href="#nuxt支持的发布部署方式" class="header-anchor">#</a> Nuxt支持的发布部署方式</h2> <p>Nuxt.js 提供了一系列常用的命令, 用于开发或发布部署。支持的两种发布部署应用的方式：服务端渲染应用部署 和 静态应用部署。本文，我们要介绍的是第一种。</p> <table><thead><tr><th>命令</th> <th>描述</th></tr></thead> <tbody><tr><td>nuxt</td> <td>启动一个热加载的Web服务器（开发模式） localhost:3000</td></tr> <tr><td>nuxt build</td> <td>利用webpack编译应用，压缩JS和CSS资源（发布用）</td></tr> <tr><td>nuxt start</td> <td>以生产模式启动一个Web服务器 (需要先执行nuxt build)</td></tr> <tr><td>nuxt generate</td> <td>编译应用，并依据路由配置生成对应的HTML文件 (用于静态站点的部署)</td></tr></tbody></table> <p>如果使用了 Koa/Express 等 Node.js Web 开发框架，并使用了 Nuxt 作为中间件，可以自定义 Web 服务器的启动入口：</p> <table><thead><tr><th>命令</th> <th>描述</th></tr></thead> <tbody><tr><td>NODE_ENV=development nodemon server/index.js</td> <td>启动一个热加载的自定义 Web 服务器（开发模式）</td></tr> <tr><td>NODE_ENV=production node server/index.js</td> <td>以生产模式启动一个自定义 Web 服务器 (需要先执行 nuxt build)</td></tr></tbody></table> <h2 id="部署前先捋清环境有哪些"><a href="#部署前先捋清环境有哪些" class="header-anchor">#</a> 部署前先捋清环境有哪些？</h2> <blockquote><p>每个公司都有自己的一套代码环境，就我现在这家为例，分为测试、主测试(内部叫主UAT)、准生产和生产环境，其中主测试与测试环境的唯一区别就是不需要绑定host。为什么要这么区分呢？就是避免测试环境受影响而已。</p></blockquote> <p>先说一个场景：开发人员开发完一个新功能就打算部署到测试环境提测，QA在这测试过程，一般都会提一些bug给对应的开发人员，而开发人员在修复bug这个过程，一般都需要重启服务器去验证下。此时，如果QA正在验证一个功能，突然发现页面打不开或接口调不通了，心里肯定MMP了。当然，你也可以直接告知QA说服务器需要重启几分钟，但是如果次数多了谁都受不了。回归正题，准生产就是只能在内网访问的生产环境，一切配置和数据跟线上一致；而生产环境，就是对外的线上环境了。</p> <h2 id="根据执行环境去配置各种资源"><a href="#根据执行环境去配置各种资源" class="header-anchor">#</a> 根据执行环境去配置各种资源</h2> <p>一套代码要配置这么多个环境，还算是比较麻烦的事儿。本项目部署相关的总结，有哪些可圈可点的呢？总结了以下几点：</p> <h3 id="静态资源路径配置"><a href="#静态资源路径配置" class="header-anchor">#</a> 静态资源路径配置</h3> <p>对于js&amp;css等静态资源的路径配置，我是这么做的：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>## config<span class="token punctuation">.</span>js ##
+<span class="token keyword">const</span> domain <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token string">&quot;test.abc.com&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">pre</span><span class="token operator">:</span> <span class="token string">&quot;pre.abc.com&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">prod</span><span class="token operator">:</span> <span class="token string">&quot;prod.abc.com&quot;</span>
+<span class="token punctuation">}</span>
+domain<span class="token punctuation">.</span>dev <span class="token operator">=</span> domain<span class="token punctuation">.</span>test<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> dnsPrefetch <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">js</span><span class="token operator">:</span> <span class="token string">&quot;//test.abc.com&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">css</span><span class="token operator">:</span> <span class="token string">&quot;//test.abc.com&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">pre</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">js</span><span class="token operator">:</span> <span class="token string">&quot;//pre.abc.com&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">css</span><span class="token operator">:</span> <span class="token string">&quot;//pre.abc.com&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">prod</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">js</span><span class="token operator">:</span> <span class="token string">&quot;//js.m.abc.com&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">css</span><span class="token operator">:</span> <span class="token string">&quot;//css.m.abc.com&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+dnsPrefetch<span class="token punctuation">.</span>dev <span class="token operator">=</span> dnsPrefetch<span class="token punctuation">.</span>test<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> staticsBaseUrl <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">js</span><span class="token operator">:</span> <span class="token string">&quot;//test.abc.com/test&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">css</span><span class="token operator">:</span> <span class="token string">&quot;//test.abc.com/test&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">app</span><span class="token operator">:</span> <span class="token string">&quot;//test.abc.com/test&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">pre</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">js</span><span class="token operator">:</span> <span class="token string">&quot;//pre.abc.com/pre&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">css</span><span class="token operator">:</span> <span class="token string">&quot;//pre.abc.com/pre&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">app</span><span class="token operator">:</span> <span class="token string">&quot;//pre.abc.com/pre&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">prod</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">js</span><span class="token operator">:</span> <span class="token string">&quot;//js.m.abc.com/prod&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">css</span><span class="token operator">:</span> <span class="token string">&quot;//css.m.abc.com/prod&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">app</span><span class="token operator">:</span> <span class="token string">&quot;//app.m.abc.com/prod&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+staticsBaseUrl<span class="token punctuation">.</span>dev <span class="token operator">=</span> staticsBaseUrl<span class="token punctuation">.</span>test<span class="token punctuation">;</span>
+
+<span class="token comment">// 配置一些公共的页面跳转链接</span>
+<span class="token keyword">const</span> locationHref <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">login</span><span class="token operator">:</span> <span class="token string">&quot;//test.abc.com/login.html&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">pre</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">login</span><span class="token operator">:</span> <span class="token string">&quot;//pre.abc.com/login.html&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">prod</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">login</span><span class="token operator">:</span> <span class="token string">&quot;//prod.abc.com/login.html&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+locationHref<span class="token punctuation">.</span>dev <span class="token operator">=</span> locationHref<span class="token punctuation">.</span>test<span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    domain<span class="token punctuation">,</span>
+    dnsPrefetch<span class="token punctuation">,</span>
+    staticsBaseUrl<span class="token punctuation">,</span>
+    locationHref
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br></div></div><p>然后，再看如何在nuxt.config.js中配置静态资源路径的</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> env <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">EXE_ENV</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> cssStaticsPath <span class="token operator">=</span> env <span class="token operator">==</span> <span class="token string">&quot;prod&quot;</span> <span class="token operator">?</span> <span class="token string">&quot;https://css.m.abc.com/prod/ssr/statics/&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;/_nuxt/&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> jsStaticsPath <span class="token operator">=</span> env <span class="token operator">==</span> <span class="token string">&quot;prod&quot;</span> <span class="token operator">?</span> <span class="token string">&quot;https://js.m.abc.com/prod/ssr/statics/&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;/_nuxt/&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> publicStaticsPath <span class="token operator">=</span> env <span class="token operator">==</span> <span class="token string">&quot;prod&quot;</span> <span class="token operator">?</span> <span class="token string">&quot;https://js.m.abc.com/prod/ssr/public/&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> host <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">HOST</span> <span class="token operator">||</span> <span class="token string">&quot;0.0.0.0&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> port <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PORT</span> <span class="token operator">||</span> <span class="token string">&quot;9527&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> dnsPrefetch<span class="token punctuation">,</span> staticsBaseUrl <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;./config&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'universal'</span><span class="token punctuation">,</span>
+  <span class="token comment">/*
+  ** 页面头部信息
+  */</span>
+  <span class="token literal-property property">head</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'页面默认title'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> <span class="token literal-property property">charset</span><span class="token operator">:</span> <span class="token string">'utf-8'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token literal-property property">hid</span><span class="token operator">:</span> <span class="token string">'defaultKeywords'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'keywords'</span><span class="token punctuation">,</span> <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'电脑,手机,数码,空调...'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'viewport'</span><span class="token punctuation">,</span> <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no,viewport-fit=cover'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'applicable-device'</span><span class="token punctuation">,</span> <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'mobile'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'apple-mobile-web-app-capable'</span><span class="token punctuation">,</span> <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'yes'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'format-detection'</span><span class="token punctuation">,</span> <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'telephone=no'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'wap-font-scale'</span><span class="token punctuation">,</span> <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'no'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token string-property property">'http-equiv'</span><span class="token operator">:</span> <span class="token string">'Expires'</span><span class="token punctuation">,</span> <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'-1'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token string-property property">'http-equiv'</span><span class="token operator">:</span> <span class="token string">'Cache-Control'</span><span class="token punctuation">,</span> <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'no-cache, no-store, must-revalidate'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token string-property property">'http-equiv'</span><span class="token operator">:</span> <span class="token string">'Cache-Control'</span><span class="token punctuation">,</span> <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'no-siteapp'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token string-property property">'http-equiv'</span><span class="token operator">:</span> <span class="token string">'Cache-Control'</span><span class="token punctuation">,</span> <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'no-transform'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token string-property property">'http-equiv'</span><span class="token operator">:</span> <span class="token string">'Pragma'</span><span class="token punctuation">,</span> <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'no-cache'</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">link</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> <span class="token literal-property property">rel</span><span class="token operator">:</span> <span class="token string">'dns-prefetch'</span><span class="token punctuation">,</span> <span class="token literal-property property">href</span><span class="token operator">:</span> dnsPrefetch<span class="token punctuation">[</span>env<span class="token punctuation">]</span><span class="token punctuation">.</span>js <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token literal-property property">rel</span><span class="token operator">:</span> <span class="token string">'dns-prefetch'</span><span class="token punctuation">,</span> <span class="token literal-property property">href</span><span class="token operator">:</span> dnsPrefetch<span class="token punctuation">[</span>env<span class="token punctuation">]</span><span class="token punctuation">.</span>css <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">script</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>publicStaticsPath<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/js/flexible.min.js</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'text/javascript'</span><span class="token punctuation">,</span> <span class="token literal-property property">charset</span><span class="token operator">:</span> <span class="token string">'utf-8'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">&quot;https://res2.wx.qq.com/open/js/jweixin-1.4.0.js&quot;</span><span class="token punctuation">,</span><span class="token comment">// 微信SDK</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'text/javascript'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">defer</span><span class="token operator">:</span> <span class="token string">&quot;defer&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">charset</span><span class="token operator">:</span> <span class="token string">'utf-8'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><h3 id="接口api路径配置"><a href="#接口api路径配置" class="header-anchor">#</a> 接口API路径配置</h3> <p>据我所知，node端调用接口一般走内网域名，服务端之间在内网调用更高效。一开始走过弯路，接口没区分内外网域名，导致node端调用接口偶尔会出现接口调用失败的情况，至少有2%的失败率。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> fetch <span class="token keyword">from</span> <span class="token string">&quot;./fetch&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> env <span class="token operator">=</span> envConfig<span class="token punctuation">.</span>exeEnv<span class="token punctuation">;</span>
+<span class="token keyword">const</span> host <span class="token operator">=</span> envConfig<span class="token punctuation">.</span>host<span class="token punctuation">;</span>
+<span class="token keyword">const</span> port <span class="token operator">=</span> envConfig<span class="token punctuation">.</span>port<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> devBaseURL <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">http://127.0.0.1:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> baseURL <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token literal-property property">dev</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">mobile</span><span class="token operator">:</span> <span class="token string">&quot;http://test.mobile.abc.com&quot;</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">cmsProm</span><span class="token operator">:</span> <span class="token string">&quot;http://test.prom.mobile.abc.com&quot;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">mobile</span><span class="token operator">:</span> <span class="token string">&quot;http://test.mobile.abc.com&quot;</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">cmsProm</span><span class="token operator">:</span> <span class="token string">&quot;http://test.prom.mobile.abc.com&quot;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">pre</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">mobile</span><span class="token operator">:</span> <span class="token string">&quot;http://pre.mobile.abc.com&quot;</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">cmsProm</span><span class="token operator">:</span> <span class="token string">&quot;http://pre.prom.mobile.abc.com&quot;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">prod</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">mobile</span><span class="token operator">:</span> <span class="token string">&quot;https://mobile.abc.com&quot;</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">promMobile</span><span class="token operator">:</span> <span class="token string">&quot;https://prom.mobile.abc.com&quot;</span><span class="token punctuation">,</span>
+		<span class="token comment">// 应服务端要求，生产环境下，node层需走内网域名</span>
+		<span class="token literal-property property">innerMobile</span><span class="token operator">:</span> <span class="token string">&quot;inner.wireless.api&quot;</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">innerPromMobile</span><span class="token operator">:</span> <span class="token string">&quot;inner.prom.wireless.api&quot;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 加载猜你喜欢商品列表（利用process.server和执行环境env判断是否用内网域名）</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">fetchGuessLikeGoodsList</span><span class="token punctuation">(</span><span class="token parameter">params</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> fetch<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/wap/product/search/guessLikeGoodsList.jsp</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> params<span class="token punctuation">.</span>data<span class="token punctuation">,</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	  <span class="token literal-property property">baseURL</span><span class="token operator">:</span> process<span class="token punctuation">.</span>server <span class="token operator">&amp;&amp;</span> env <span class="token operator">===</span> <span class="token string">'prod'</span> <span class="token operator">?</span> baseURL<span class="token punctuation">[</span>env<span class="token punctuation">]</span><span class="token punctuation">.</span> innerMobile <span class="token operator">:</span> baseURL<span class="token punctuation">[</span>env<span class="token punctuation">]</span><span class="token punctuation">.</span>mobile
+	<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	  <span class="token literal-property property">headers</span><span class="token operator">:</span> params<span class="token punctuation">.</span>headers
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><p>补充下执行环境的定义：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token comment">## 在nuxt.config.js中定义 ##</span>
+plugins: <span class="token punctuation">[</span>
+  new webpack.DefinePlugin<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token string">'envConfig'</span><span class="token builtin class-name">:</span> JSON.stringify<span class="token punctuation">(</span><span class="token punctuation">{</span>
+      exeEnv: process.env.EXE_ENV,
+      host: host,
+      port: port
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="pm2的一些配置"><a href="#pm2的一些配置" class="header-anchor">#</a> pm2的一些配置</h3> <p>总所周知，pm2是一款node进程管理工具，内置负载均衡。可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，使用也比较简单。本项目，也是用pm2来管理的，现列举出pm2.json文件的配置：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token punctuation">{</span>
+    <span class="token string">&quot;apps&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;my-first-ssr&quot;</span>, // 应用名称    
+        <span class="token string">&quot;script&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;./server/index.js&quot;</span>, // 实际启动脚本
+        <span class="token string">&quot;cwd&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;./&quot;</span>, // 当前工作路径
+        <span class="token string">&quot;args&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>, // 传递给脚本的参数
+        <span class="token string">&quot;interpreter&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>, // 指定的脚本解释器
+        <span class="token string">&quot;interpreter_args&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>, // 传递给解释器的参数
+        <span class="token string">&quot;watch&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span> // 监控变化的目录，一旦变化，自动重启
+		    <span class="token string">&quot;bin&quot;</span>,
+		    <span class="token string">&quot;routers&quot;</span>
+		  <span class="token punctuation">]</span>,
+        <span class="token string">&quot;ignore_watch&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span> // 从监控目录中排除
+            <span class="token string">&quot;node_modules&quot;</span>,
+            <span class="token string">&quot;logs&quot;</span>
+        <span class="token punctuation">]</span>,
+        <span class="token string">&quot;exec_mode&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;cluster_mode&quot;</span>, // 应用启动模式，支持fork和cluster模式
+        <span class="token string">&quot;instances&quot;</span><span class="token builtin class-name">:</span> <span class="token number">8</span>, // 应用启动实例个数，仅在cluster模式有效 默认为fork；或者 max
+        <span class="token string">&quot;max_memory_restart&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;26214M&quot;</span>, // 最大内存限制数，超出自动重启
+        <span class="token string">&quot;error_file&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;my-first-ssr/logs/app-err.log&quot;</span>, // 错误日志文件
+        <span class="token string">&quot;out_file&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;my-first-ssr/logs/app-out.log&quot;</span>, // 正常日志文件
+        <span class="token string">&quot;merge_logs&quot;</span><span class="token builtin class-name">:</span> true, // 设置追加日志而不是新建日志
+        <span class="token string">&quot;log_date_format&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;YYYY-MM-DD HH:mm:ss&quot;</span>, // 指定日志文件的时间格式
+        <span class="token string">&quot;min_uptime&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;60s&quot;</span>, // 应用运行少于时间被认为是异常启动
+        <span class="token string">&quot;max_restarts&quot;</span><span class="token builtin class-name">:</span> <span class="token number">30</span>, // 最大异常重启次数，即小于min_uptime运行时间重启次数；
+        <span class="token string">&quot;autorestart&quot;</span><span class="token builtin class-name">:</span> true, // 默认为true, 发生异常的情况下自动重启
+        <span class="token string">&quot;cron_restart&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>, // crontab时间格式重启应用，目前只支持cluster模式<span class="token punctuation">;</span>
+        <span class="token string">&quot;restart_delay&quot;</span><span class="token builtin class-name">:</span> <span class="token number">60</span>, // 异常重启情况下，延时重启时间
+        <span class="token string">&quot;env&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;NODE_ENV&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;production&quot;</span>, // 环境参数，当前指定为生产环境 process.env.NODE_ENV
+            <span class="token string">&quot;EXE_ENV&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;prod&quot;</span>, // 生产环境，NODE_ENV会被webpack的mode覆写
+            <span class="token string">&quot;REMOTE_ADDR&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>, // process.env.REMOTE_ADDR
+            <span class="token string">&quot;HOST&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;0.0.0.0&quot;</span>,
+            <span class="token string">&quot;PORT&quot;</span><span class="token builtin class-name">:</span> <span class="token number">9527</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;env_dev&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;NODE_ENV&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;production&quot;</span>, // 环境参数，当前指定为开发环境 pm2 start app.js <span class="token parameter variable">--env</span> dev
+            <span class="token string">&quot;EXE_ENV&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;dev&quot;</span>, // 开发环境，NODE_ENV会被webpack的mode覆写
+            <span class="token string">&quot;REMOTE_ADDR&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;HOST&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;0.0.0.0&quot;</span>,
+            <span class="token string">&quot;PORT&quot;</span><span class="token builtin class-name">:</span> <span class="token number">9527</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;env_uat&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;NODE_ENV&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;production&quot;</span>, // 环境参数，当前指定为测试环境 pm2 start app.js <span class="token parameter variable">--env</span> uat
+            <span class="token string">&quot;EXE_ENV&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;uat&quot;</span>, // uat环境，NODE_ENV会被webpack的mode覆写
+            <span class="token string">&quot;REMOTE_ADDR&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;HOST&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;0.0.0.0&quot;</span>,
+            <span class="token string">&quot;PORT&quot;</span><span class="token builtin class-name">:</span> <span class="token number">9527</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;env_pre&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;NODE_ENV&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;production&quot;</span>, // 环境参数，当前指定为测试环境 pm2 start app.js <span class="token parameter variable">--env</span> pre
+            <span class="token string">&quot;EXE_ENV&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;pre&quot;</span>, // 准生产环境，NODE_ENV会被webpack的mode覆写
+            <span class="token string">&quot;REMOTE_ADDR&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;HOST&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;0.0.0.0&quot;</span>,
+            <span class="token string">&quot;PORT&quot;</span><span class="token builtin class-name">:</span> <span class="token number">9527</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br></div></div><h3 id="package-json文件的配置"><a href="#package-json文件的配置" class="header-anchor">#</a> package.json文件的配置</h3> <p>为了方便本地能调试test/pre/prod环境的接口数据，这里有个小技巧，如下：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token string">&quot;scripts&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;dev&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;cross-env EXE_ENV=test NODE_ENV=development nodemon server/index.js --watch server&quot;</span>,
+    // 方便本地起test环境进行测试环境的调试
+    <span class="token string">&quot;test&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;cross-env EXE_ENV=test PORT=80 NODE_ENV=development nodemon server/index.js --watch server&quot;</span>,
+    // 方便本地起pre环境进行准生产环境的调试
+    <span class="token string">&quot;pre&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;cross-env EXE_ENV=pre PORT=80 NODE_ENV=development nodemon server/index.js --watch server&quot;</span>,
+    // 方便本地起prod环境进行生产环境的调试
+    <span class="token string">&quot;prod&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;cross-env EXE_ENV=prod PORT=80 NODE_ENV=development nodemon server/index.js --watch server&quot;</span>,
+    <span class="token string">&quot;build:test&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;cross-env EXE_ENV=uat nuxt build&quot;</span>,
+    <span class="token string">&quot;build:pre&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;cross-env EXE_ENV=tslive nuxt build&quot;</span>,
+    <span class="token string">&quot;build&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;cross-env EXE_ENV=prod nuxt build&quot;</span>,
+    <span class="token string">&quot;start&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;cross-env EXE_ENV=dev NODE_ENV=production node server/index.js&quot;</span>,
+    <span class="token string">&quot;generate&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;nuxt generate&quot;</span>
+<span class="token punctuation">}</span>,
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="server-index-js文件的配置"><a href="#server-index-js文件的配置" class="header-anchor">#</a> server/index.js文件的配置</h3> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>const Koa <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'koa'</span><span class="token punctuation">)</span>
+const consola <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'consola'</span><span class="token punctuation">)</span>
+const path <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+const fs <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
+const Router <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'koa-router'</span><span class="token punctuation">)</span>
+const bodyParser <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'koa-bodyparser'</span><span class="token punctuation">)</span>
+const <span class="token punctuation">{</span> Nuxt, Builder <span class="token punctuation">}</span> <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'nuxt'</span><span class="token punctuation">)</span>
+const proxy <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'./proxy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+const mock <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'./mock'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+const app <span class="token operator">=</span> new Koa<span class="token punctuation">(</span><span class="token punctuation">)</span>
+const router <span class="token operator">=</span> new Router<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+router.all<span class="token punctuation">(</span><span class="token string">'/mock'</span>, mock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+router.all<span class="token punctuation">(</span><span class="token string">'/proxy'</span>, proxy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app
+  .use<span class="token punctuation">(</span>bodyParser<span class="token punctuation">(</span><span class="token punctuation">))</span>
+  .use<span class="token punctuation">(</span>router.routes<span class="token punctuation">(</span><span class="token punctuation">))</span>
+  .use<span class="token punctuation">(</span>router.allowedMethods<span class="token punctuation">(</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
+
+// 导入nuxt.config.js文件
+const config <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'../nuxt.config.js'</span><span class="token punctuation">)</span>
+config.dev <span class="token operator">=</span> app.env <span class="token operator">!=</span><span class="token operator">=</span> <span class="token string">'production'</span>
+
+async <span class="token keyword">function</span> <span class="token function-name function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  // Instantiate nuxt.js
+  const nuxt <span class="token operator">=</span> new Nuxt<span class="token punctuation">(</span>config<span class="token punctuation">)</span>
+
+  const <span class="token punctuation">{</span>
+    <span class="token function">host</span> <span class="token operator">=</span> process.env.HOST <span class="token operator">||</span> <span class="token string">'127.0.0.1'</span>,
+    port <span class="token operator">=</span> process.env.PORT <span class="token operator">||</span> <span class="token number">9527</span>
+  <span class="token punctuation">}</span> <span class="token operator">=</span> nuxt.options.server
+
+  // 开发环境下编译
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>config.dev<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    const builder <span class="token operator">=</span> new Builder<span class="token punctuation">(</span>nuxt<span class="token punctuation">)</span>
+    await builder.build<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    await nuxt.ready<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  app.use<span class="token punctuation">((</span>ctx<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    ctx.status <span class="token operator">=</span> <span class="token number">200</span>
+    ctx.respond <span class="token operator">=</span> <span class="token boolean">false</span> // Bypass Koa's built-in response handling
+    ctx.req.ctx <span class="token operator">=</span> ctx // This might be useful later on, e.g. <span class="token keyword">in</span> nuxtServerInit or with nuxt-stash
+    nuxt.render<span class="token punctuation">(</span>ctx.req, ctx.res<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  app.listen<span class="token punctuation">(</span>port, <span class="token function">host</span><span class="token punctuation">)</span>
+  consola.ready<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    message: <span class="token variable"><span class="token variable">`</span>Server listening on http://$<span class="token punctuation">{</span>host<span class="token punctuation">}</span>:$<span class="token punctuation">{</span>port<span class="token punctuation">}</span><span class="token variable">`</span></span>,
+    badge: <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br></div></div><h3 id="nginx的一些配置"><a href="#nginx的一些配置" class="header-anchor">#</a> nginx的一些配置</h3> <p>使用nginx作为反向代理，将页面伪静态化，这样有利于SEO：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>proxy_cache_path  /data/nginx/cache <span class="token assign-left variable">levels</span><span class="token operator">=</span><span class="token number">1</span>:2 <span class="token assign-left variable">keys_zone</span><span class="token operator">=</span>nuxt-cache:25m <span class="token assign-left variable">max_size</span><span class="token operator">=</span>1g <span class="token assign-left variable">inactive</span><span class="token operator">=</span>60m <span class="token assign-left variable">use_temp_path</span><span class="token operator">=</span>off<span class="token punctuation">;</span>
+
+map <span class="token variable">$sent_http_content_type</span> <span class="token variable">$expires</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;text/html&quot;</span>                 epoch<span class="token punctuation">;</span>
+    <span class="token string">&quot;text/html; charset=utf-8&quot;</span>  epoch<span class="token punctuation">;</span>
+    default                     off<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+server <span class="token punctuation">{</span>
+    listen          <span class="token number">80</span><span class="token punctuation">;</span>             <span class="token comment"># the port nginx is listening on</span>
+    server_name     your-domain<span class="token punctuation">;</span>    <span class="token comment"># setup your domain here</span>
+
+    <span class="token function">gzip</span>            on<span class="token punctuation">;</span>
+    gzip_types      text/plain application/xml text/css application/javascript<span class="token punctuation">;</span>
+    gzip_min_length <span class="token number">1000</span><span class="token punctuation">;</span>
+
+    charset utf-8<span class="token punctuation">;</span>
+
+    root /var/www/NUXT_PROJECT_PATH/dist
+
+    location ~* <span class="token punctuation">\</span>.<span class="token punctuation">(</span>?:ico<span class="token operator">|</span>gif<span class="token operator">|</span>jpe?g<span class="token operator">|</span>png<span class="token operator">|</span>woff2?<span class="token operator">|</span>eot<span class="token operator">|</span>otf<span class="token operator">|</span>ttf<span class="token operator">|</span>svg<span class="token operator">|</span>js<span class="token operator">|</span>css<span class="token punctuation">)</span>$ <span class="token punctuation">{</span>
+        expires <span class="token variable">$expires</span><span class="token punctuation">;</span>
+        add_header Pragma public<span class="token punctuation">;</span>
+        add_header Cache-Control <span class="token string">&quot;public&quot;</span><span class="token punctuation">;</span>
+
+        try_files <span class="token variable">$uri</span> <span class="token variable">$uri</span>/ @proxy<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    location / <span class="token punctuation">{</span>
+        expires <span class="token variable">$expires</span><span class="token punctuation">;</span>
+        proxy_redirect                      off<span class="token punctuation">;</span>
+        proxy_set_header Host               <span class="token variable">$host</span><span class="token punctuation">;</span>
+        proxy_set_header X-Real-IP          <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+        proxy_set_header X-Forwarded-For    <span class="token variable">$proxy_add_x_forwarded_for</span><span class="token punctuation">;</span>
+        proxy_set_header X-Forwarded-Proto  <span class="token variable">$scheme</span><span class="token punctuation">;</span>
+        proxy_ignore_headers        Cache-Control<span class="token punctuation">;</span>
+        proxy_http_version          <span class="token number">1.1</span><span class="token punctuation">;</span>
+        proxy_read_timeout          1m<span class="token punctuation">;</span>
+        proxy_connect_timeout       1m<span class="token punctuation">;</span>
+        <span class="token comment"># rewrite ^/index.html(.*) /$1 break;</span>
+        rewrite ^/store.html<span class="token punctuation">(</span>.*<span class="token punctuation">)</span> /store<span class="token variable">$1</span> <span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+        rewrite ^/store<span class="token punctuation">\</span>/<span class="token punctuation">(</span><span class="token punctuation">\</span>w+<span class="token punctuation">)</span>.html<span class="token punctuation">(</span><span class="token punctuation">\</span>?<span class="token punctuation">(</span>.+<span class="token punctuation">))</span>? /store?storeid<span class="token operator">=</span><span class="token variable">$1</span><span class="token variable">$3</span> <span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+        proxy_pass http://127.0.0.1:9527<span class="token punctuation">;</span> // see the address of the Node.js instance here.
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br></div></div><h3 id="项目部署shell脚本"><a href="#项目部署shell脚本" class="header-anchor">#</a> 项目部署Shell脚本</h3> <p>以部署测试环境为例，我选择了在develop分支上拉取代码，编译完成后，输出zip包的版本号，复制此版本号切到jenkins上进行部署。Talk is cheap，如果还是没怎么理解，那就 Show me the code 吧，简单到只是堆砌了一堆的命令:）</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token function">rm</span> <span class="token parameter variable">-r</span> src dist
+<span class="token function">git</span> clone <span class="token parameter variable">-b</span> develop git@code.ds.abc.com:h5/my-first-ssr.git src
+<span class="token builtin class-name">cd</span> src
+<span class="token function">git</span> pull
+<span class="token comment"># 切公司内部npm私有库</span>
+<span class="token function">npm</span> <span class="token builtin class-name">set</span> registry http://npm.xxx.com
+<span class="token function">sudo</span> <span class="token function">npm</span> i m-cms-components@latest
+<span class="token function">npm</span> config <span class="token builtin class-name">set</span> registry https://registry.npmjs.org
+<span class="token function">sudo</span> <span class="token function">npm</span> i
+<span class="token function">npm</span> run build:test
+<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> <span class="token punctuation">..</span>/dist/server
+<span class="token function">cp</span> .nuxt/ <span class="token punctuation">..</span>/dist/server <span class="token parameter variable">-rf</span>
+<span class="token function">cp</span> config/ <span class="token punctuation">..</span>/dist/server <span class="token parameter variable">-rf</span>
+<span class="token function">cp</span> static/ <span class="token punctuation">..</span>/dist/server <span class="token parameter variable">-rf</span>
+<span class="token function">cp</span> server/ <span class="token punctuation">..</span>/dist/server <span class="token parameter variable">-rf</span>
+<span class="token function">cp</span> nuxt.config.js <span class="token punctuation">..</span>/dist/server <span class="token parameter variable">-f</span>
+<span class="token function">cp</span> pm2.json <span class="token punctuation">..</span>/dist/server <span class="token parameter variable">-f</span>
+<span class="token function">cp</span> package.json <span class="token punctuation">..</span>/dist/server <span class="token parameter variable">-f</span>
+<span class="token function">cp</span> .nuxt/dist/client/ <span class="token punctuation">..</span>/dist <span class="token parameter variable">-rf</span>
+<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>/dist/server
+<span class="token function">npm</span> <span class="token builtin class-name">set</span> registry http://npm.xxx.com
+<span class="token function">sudo</span> <span class="token function">npm</span> i m-cms-components@latest
+<span class="token function">npm</span> config <span class="token builtin class-name">set</span> registry https://registry.npmjs.org
+<span class="token function">sudo</span> <span class="token function">npm</span> i <span class="token parameter variable">--production</span>
+<span class="token assign-left variable">current</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">date</span> <span class="token string">&quot;+%Y-%m-%d %H:%M:%S&quot;</span><span class="token variable">`</span></span>
+<span class="token assign-left variable">timeStamp</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">date</span> <span class="token parameter variable">-d</span> <span class="token string">&quot;<span class="token variable">$current</span>&quot;</span> +%s<span class="token variable">`</span></span>
+<span class="token assign-left variable">currentTimeStamp</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>timeStamp<span class="token operator">*</span><span class="token number">1000</span><span class="token operator">+</span>`date &quot;<span class="token operator">+</span><span class="token operator">%</span>N&quot;`<span class="token operator">/</span><span class="token number">1000000</span><span class="token variable">))</span></span>
+<span class="token comment"># cd dist</span>
+<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>/
+<span class="token comment"># 测试环境打包</span>
+<span class="token function">zip</span> <span class="token parameter variable">-r</span> <span class="token punctuation">..</span>/my-first-ssr-release-<span class="token variable">$currentTimeStamp</span>.zip .<span class="token punctuation">[</span><span class="token operator">!</span>.<span class="token punctuation">]</span>* *
+<span class="token comment"># cd release</span>
+<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>/<span class="token punctuation">..</span>/
+<span class="token function">git</span> clone git@code.ds.abc.com:h5/my-first-ssr-release.git release
+<span class="token builtin class-name">cd</span> release
+<span class="token function">git</span> pull
+<span class="token function">mv</span> <span class="token punctuation">..</span>/uat/my-first-ssr-release-<span class="token variable">$currentTimeStamp</span>.zip ./
+<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+<span class="token function">git</span> commit -m<span class="token string">&quot;uat-<span class="token variable">$currentTimeStamp</span>&quot;</span>
+<span class="token function">git</span> push
+<span class="token comment">#rm ../test/dist -rf</span>
+<span class="token comment">#rm ../test/src -rf</span>
+<span class="token comment"># 编译成功 输出zip包的版本号，复制此版本号切到jenkins上进行部署，万事大吉了！</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;build completed, version:<span class="token variable">$currentTimeStamp</span>&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br></div></div><h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <p>至此，上面就是本人在项目部署过程中的所有笔记了。从项目需要支持哪些环境出发，到一系列的资源配置，至于部署过程的相关技术就不具体展开讨论了，虽然不是什么最佳实践，我想是可以拿出来分享下的。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.283f9e00.js" defer></script><script src="/assets/js/2.cf4fc302.js" defer></script><script src="/assets/js/63.572df829.js" defer></script>
+  </body>
+</html>

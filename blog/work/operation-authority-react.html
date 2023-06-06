@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>左侧菜单权限实现逻辑 | james9527的前端日志</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="https://github.githubassets.com/favicon.ico">
+    <meta name="description" content="欢迎访问我的前端日志~">
+    <meta name="theme-color" content="#3eaf7c">
+    
+    <link rel="preload" href="/assets/css/0.styles.323fc85a.css" as="style"><link rel="preload" href="/assets/js/app.283f9e00.js" as="script"><link rel="preload" href="/assets/js/2.cf4fc302.js" as="script"><link rel="preload" href="/assets/js/64.1b72b1c0.js" as="script"><link rel="prefetch" href="/assets/js/10.57db1124.js"><link rel="prefetch" href="/assets/js/11.9a8c3416.js"><link rel="prefetch" href="/assets/js/12.36137e9b.js"><link rel="prefetch" href="/assets/js/13.b2004519.js"><link rel="prefetch" href="/assets/js/14.659dc65b.js"><link rel="prefetch" href="/assets/js/15.2652d2db.js"><link rel="prefetch" href="/assets/js/16.d6c5f911.js"><link rel="prefetch" href="/assets/js/17.d4188079.js"><link rel="prefetch" href="/assets/js/18.e75dbabc.js"><link rel="prefetch" href="/assets/js/19.9a44ab06.js"><link rel="prefetch" href="/assets/js/20.a725d8a9.js"><link rel="prefetch" href="/assets/js/21.19d529db.js"><link rel="prefetch" href="/assets/js/22.6531ba33.js"><link rel="prefetch" href="/assets/js/23.e896325e.js"><link rel="prefetch" href="/assets/js/24.5b2997d9.js"><link rel="prefetch" href="/assets/js/25.8132ce56.js"><link rel="prefetch" href="/assets/js/26.d82843cc.js"><link rel="prefetch" href="/assets/js/27.755801db.js"><link rel="prefetch" href="/assets/js/28.e0f2fe42.js"><link rel="prefetch" href="/assets/js/29.9e3e964e.js"><link rel="prefetch" href="/assets/js/3.4f1bfa5f.js"><link rel="prefetch" href="/assets/js/30.0d93d8c0.js"><link rel="prefetch" href="/assets/js/31.5a258105.js"><link rel="prefetch" href="/assets/js/32.01eccdfc.js"><link rel="prefetch" href="/assets/js/33.8bdc1d13.js"><link rel="prefetch" href="/assets/js/34.42dd9500.js"><link rel="prefetch" href="/assets/js/35.068b72f2.js"><link rel="prefetch" href="/assets/js/36.9a71a693.js"><link rel="prefetch" href="/assets/js/37.0fb0d67b.js"><link rel="prefetch" href="/assets/js/38.ddc45527.js"><link rel="prefetch" href="/assets/js/39.27efda84.js"><link rel="prefetch" href="/assets/js/4.dee10380.js"><link rel="prefetch" href="/assets/js/40.6a51707b.js"><link rel="prefetch" href="/assets/js/41.01317f9f.js"><link rel="prefetch" href="/assets/js/42.53532a55.js"><link rel="prefetch" href="/assets/js/43.2bc63cb8.js"><link rel="prefetch" href="/assets/js/44.98288f4e.js"><link rel="prefetch" href="/assets/js/45.3e342d9d.js"><link rel="prefetch" href="/assets/js/46.9f2f2178.js"><link rel="prefetch" href="/assets/js/47.ed65ba47.js"><link rel="prefetch" href="/assets/js/48.eeb0142e.js"><link rel="prefetch" href="/assets/js/49.14392009.js"><link rel="prefetch" href="/assets/js/5.8ac07946.js"><link rel="prefetch" href="/assets/js/50.d5ff2da0.js"><link rel="prefetch" href="/assets/js/51.dcb0a9fc.js"><link rel="prefetch" href="/assets/js/52.e82abfb9.js"><link rel="prefetch" href="/assets/js/53.763c3c23.js"><link rel="prefetch" href="/assets/js/54.ab02438d.js"><link rel="prefetch" href="/assets/js/55.ac67b7a9.js"><link rel="prefetch" href="/assets/js/56.73c510d5.js"><link rel="prefetch" href="/assets/js/57.1509ddd1.js"><link rel="prefetch" href="/assets/js/58.e3a68eb7.js"><link rel="prefetch" href="/assets/js/59.1146655a.js"><link rel="prefetch" href="/assets/js/6.6de9bd08.js"><link rel="prefetch" href="/assets/js/60.a9097dd5.js"><link rel="prefetch" href="/assets/js/61.fa9e23f4.js"><link rel="prefetch" href="/assets/js/62.37d68d68.js"><link rel="prefetch" href="/assets/js/63.572df829.js"><link rel="prefetch" href="/assets/js/65.fd79b640.js"><link rel="prefetch" href="/assets/js/66.9b2fff6b.js"><link rel="prefetch" href="/assets/js/67.04661d8a.js"><link rel="prefetch" href="/assets/js/68.fe48f321.js"><link rel="prefetch" href="/assets/js/69.36199326.js"><link rel="prefetch" href="/assets/js/7.353968d1.js"><link rel="prefetch" href="/assets/js/70.5168cc3f.js"><link rel="prefetch" href="/assets/js/71.ab3249b5.js"><link rel="prefetch" href="/assets/js/72.39dfcf5c.js"><link rel="prefetch" href="/assets/js/8.2ec57bc2.js"><link rel="prefetch" href="/assets/js/9.841d4d9d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.323fc85a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">james9527的前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人简历" class="dropdown-title"><span class="title">个人简历</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人简历" class="mobile-dropdown-title"><span class="title">个人简历</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/about/me.html" class="nav-link">
+  自我介绍&amp;项目经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/basic/js.html" class="nav-link">
+  前端基础JS系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/basic/css.html" class="nav-link">
+  前端基础CSS系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端进阶" class="dropdown-title"><span class="title">前端进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端进阶" class="mobile-dropdown-title"><span class="title">前端进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/advanced/js.html" class="nav-link">
+  Javascript进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/css.html" class="nav-link">
+  CSS进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/node.html" class="nav-link">
+  Node.js进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/performance.html" class="nav-link">
+  性能优化系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><span class="title">前端工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工程化" class="mobile-dropdown-title"><span class="title">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-principle.html" class="nav-link">
+  Webpack核心概念
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/vue-cli.html" class="nav-link">
+  vue-cli中webpack相关配置
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-bug-list.html" class="nav-link">
+  Webpack踩坑清单
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="业务沉淀" class="dropdown-title"><span class="title">业务沉淀</span> <span class="arrow down"></span></button> <button type="button" aria-label="业务沉淀" class="mobile-dropdown-title"><span class="title">业务沉淀</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/work/nuxt-notes.html" class="nav-link">
+  Nuxt重构电商M站踩坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/sensors-analyse.html" class="nav-link">
+  神策数据分析简介及其应用
+</a></li><li class="dropdown-item"><!----> <a href="/blog/scratch/material.html" class="nav-link">
+  深入scratch
+</a></li><li class="dropdown-item"><!----> <a href="/blog/skulpt/introduce.html" class="nav-link">
+  深入skulpt
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/video-autoplay.html" class="nav-link">
+  H5支持Video视频自动播放技术调研
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-vue.html" class="nav-link">
+  运营侧权限控制（Vue版）
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-react.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  运营侧权限控制（React版）
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/work/home.html" class="nav-link">
+  前端开发手册
+</a></div><div class="nav-item"><a href="/blog/bookmark/home.html" class="nav-link">
+  常用网址
+</a></div><div class="nav-item"><a href="https://github.com/james9527" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人简历" class="dropdown-title"><span class="title">个人简历</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人简历" class="mobile-dropdown-title"><span class="title">个人简历</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/about/me.html" class="nav-link">
+  自我介绍&amp;项目经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/basic/js.html" class="nav-link">
+  前端基础JS系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/basic/css.html" class="nav-link">
+  前端基础CSS系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端进阶" class="dropdown-title"><span class="title">前端进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端进阶" class="mobile-dropdown-title"><span class="title">前端进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/advanced/js.html" class="nav-link">
+  Javascript进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/css.html" class="nav-link">
+  CSS进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/node.html" class="nav-link">
+  Node.js进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/performance.html" class="nav-link">
+  性能优化系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><span class="title">前端工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工程化" class="mobile-dropdown-title"><span class="title">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-principle.html" class="nav-link">
+  Webpack核心概念
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/vue-cli.html" class="nav-link">
+  vue-cli中webpack相关配置
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-bug-list.html" class="nav-link">
+  Webpack踩坑清单
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="业务沉淀" class="dropdown-title"><span class="title">业务沉淀</span> <span class="arrow down"></span></button> <button type="button" aria-label="业务沉淀" class="mobile-dropdown-title"><span class="title">业务沉淀</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/work/nuxt-notes.html" class="nav-link">
+  Nuxt重构电商M站踩坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/sensors-analyse.html" class="nav-link">
+  神策数据分析简介及其应用
+</a></li><li class="dropdown-item"><!----> <a href="/blog/scratch/material.html" class="nav-link">
+  深入scratch
+</a></li><li class="dropdown-item"><!----> <a href="/blog/skulpt/introduce.html" class="nav-link">
+  深入skulpt
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/video-autoplay.html" class="nav-link">
+  H5支持Video视频自动播放技术调研
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-vue.html" class="nav-link">
+  运营侧权限控制（Vue版）
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-react.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  运营侧权限控制（React版）
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/work/home.html" class="nav-link">
+  前端开发手册
+</a></div><div class="nav-item"><a href="/blog/bookmark/home.html" class="nav-link">
+  常用网址
+</a></div><div class="nav-item"><a href="https://github.com/james9527" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>左侧菜单权限实现逻辑</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/work/operation-authority-react.html#左侧菜单权限实现逻辑" class="sidebar-link">左侧菜单权限实现逻辑</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/work/operation-authority-react.html#route-dom部分" class="sidebar-link">Route DOM部分</a></li><li class="sidebar-sub-header"><a href="/blog/work/operation-authority-react.html#权限判断-authorized-js" class="sidebar-link">权限判断 Authorized.js</a></li><li class="sidebar-sub-header"><a href="/blog/work/operation-authority-react.html#校验权限-checkpermissions-js" class="sidebar-link">校验权限 CheckPermissions.js</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="左侧菜单权限实现逻辑"><a href="#左侧菜单权限实现逻辑" class="header-anchor">#</a> 左侧菜单权限实现逻辑</h2> <h3 id="route-dom部分"><a href="#route-dom部分" class="header-anchor">#</a> Route DOM部分</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// cop-web-admin-marketing/src/components/Authorized/AuthorizedRoute.js</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Route<span class="token punctuation">,</span> Redirect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-router-dom'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Authorized <span class="token keyword">from</span> <span class="token string">'./Authorized'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// TODO: umi只会返回render和rest</span>
+<span class="token keyword">const</span> <span class="token function-variable function">AuthorizedRoute</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> <span class="token literal-property property">component</span><span class="token operator">:</span> Component<span class="token punctuation">,</span> render<span class="token punctuation">,</span> authority<span class="token punctuation">,</span> redirectPath<span class="token punctuation">,</span> <span class="token operator">...</span>rest <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Authorized
+    authority<span class="token operator">=</span><span class="token punctuation">{</span>authority<span class="token punctuation">}</span>
+    noMatch<span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">&lt;</span>Route <span class="token punctuation">{</span><span class="token operator">...</span>rest<span class="token punctuation">}</span> render<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>Redirect to<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token literal-property property">pathname</span><span class="token operator">:</span> redirectPath <span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">}</span>
+  <span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Route <span class="token punctuation">{</span><span class="token operator">...</span>rest<span class="token punctuation">}</span> render<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">props</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>Component <span class="token operator">?</span> <span class="token operator">&lt;</span>Component <span class="token punctuation">{</span><span class="token operator">...</span>props<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span> <span class="token operator">:</span> <span class="token function">render</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Authorized<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> AuthorizedRoute<span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h3 id="权限判断-authorized-js"><a href="#权限判断-authorized-js" class="header-anchor">#</a> 权限判断 Authorized.js</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// cop-web-admin-marketing/src/components/Authorized/Authorized.js</span>
+<span class="token keyword">import</span> CheckPermissions <span class="token keyword">from</span> <span class="token string">'./CheckPermissions'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Authorized</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> children<span class="token punctuation">,</span> authority<span class="token punctuation">,</span> noMatch <span class="token operator">=</span> <span class="token keyword">null</span> <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> childrenRender <span class="token operator">=</span> <span class="token keyword">typeof</span> children <span class="token operator">===</span> <span class="token string">'undefined'</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> children<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token function">CheckPermissions</span><span class="token punctuation">(</span>authority<span class="token punctuation">,</span> childrenRender<span class="token punctuation">,</span> noMatch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Authorized<span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="校验权限-checkpermissions-js"><a href="#校验权限-checkpermissions-js" class="header-anchor">#</a> 校验权限 CheckPermissions.js</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// cop-marketing/cop-web-admin-marketing/src/components/Authorized/CheckPermissions.js</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> PromiseRender <span class="token keyword">from</span> <span class="token string">'./PromiseRender'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">CURRENT</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./renderAuthorize'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">isPromise</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">!</span><span class="token operator">!</span>obj <span class="token operator">&amp;&amp;</span>
+    <span class="token punctuation">(</span><span class="token keyword">typeof</span> obj <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">||</span> <span class="token keyword">typeof</span> obj <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+    <span class="token keyword">typeof</span> obj<span class="token punctuation">.</span>then <span class="token operator">===</span> <span class="token string">'function'</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 通用权限检查方法
+ * @param { 权限判定 Permission judgment type string |array | Promise | Function } authority
+ * @param { 你的权限 Your permission description  type:string} currentAuthority
+ * @param { 通过的组件 Passing components } target
+ * @param { 未通过的组件 no pass components } Exception
+ */</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">checkPermissions</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">authority<span class="token punctuation">,</span> currentAuthority<span class="token punctuation">,</span> target<span class="token punctuation">,</span> Exception</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 没有判定权限.默认查看所有</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>authority<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> target<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 数组处理</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>authority<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>authority<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>currentAuthority<span class="token punctuation">)</span> <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> target<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>currentAuthority<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> currentAuthority<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> element <span class="token operator">=</span> currentAuthority<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>authority<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span> <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> target<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> Exception<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// string 处理</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> authority <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>authority <span class="token operator">===</span> currentAuthority<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> target<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>currentAuthority<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> currentAuthority<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> element <span class="token operator">=</span> currentAuthority<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>authority <span class="token operator">===</span> element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> target<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> Exception<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Promise 处理</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPromise</span><span class="token punctuation">(</span>authority<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>PromiseRender ok<span class="token operator">=</span><span class="token punctuation">{</span>target<span class="token punctuation">}</span> error<span class="token operator">=</span><span class="token punctuation">{</span>Exception<span class="token punctuation">}</span> promise<span class="token operator">=</span><span class="token punctuation">{</span>authority<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Function 处理</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> authority <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> bool <span class="token operator">=</span> <span class="token function">authority</span><span class="token punctuation">(</span>currentAuthority<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// 函数执行后返回值是 Promise</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPromise</span><span class="token punctuation">(</span>bool<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">&lt;</span>PromiseRender ok<span class="token operator">=</span><span class="token punctuation">{</span>target<span class="token punctuation">}</span> error<span class="token operator">=</span><span class="token punctuation">{</span>Exception<span class="token punctuation">}</span> promise<span class="token operator">=</span><span class="token punctuation">{</span>bool<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>bool<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> target<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> Exception<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'unsupported parameters'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span> checkPermissions <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">check</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">authority<span class="token punctuation">,</span> target<span class="token punctuation">,</span> Exception</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+  <span class="token function">checkPermissions</span><span class="token punctuation">(</span>authority<span class="token punctuation">,</span> <span class="token constant">CURRENT</span><span class="token punctuation">,</span> target<span class="token punctuation">,</span> Exception<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> check<span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.283f9e00.js" defer></script><script src="/assets/js/2.cf4fc302.js" defer></script><script src="/assets/js/64.1b72b1c0.js" defer></script>
+  </body>
+</html>

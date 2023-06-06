@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React项目性能优化手段 | james9527的前端日志</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="https://github.githubassets.com/favicon.ico">
+    <meta name="description" content="欢迎访问我的前端日志~">
+    <meta name="theme-color" content="#3eaf7c">
+    
+    <link rel="preload" href="/assets/css/0.styles.323fc85a.css" as="style"><link rel="preload" href="/assets/js/app.283f9e00.js" as="script"><link rel="preload" href="/assets/js/2.cf4fc302.js" as="script"><link rel="preload" href="/assets/js/21.19d529db.js" as="script"><link rel="prefetch" href="/assets/js/10.57db1124.js"><link rel="prefetch" href="/assets/js/11.9a8c3416.js"><link rel="prefetch" href="/assets/js/12.36137e9b.js"><link rel="prefetch" href="/assets/js/13.b2004519.js"><link rel="prefetch" href="/assets/js/14.659dc65b.js"><link rel="prefetch" href="/assets/js/15.2652d2db.js"><link rel="prefetch" href="/assets/js/16.d6c5f911.js"><link rel="prefetch" href="/assets/js/17.d4188079.js"><link rel="prefetch" href="/assets/js/18.e75dbabc.js"><link rel="prefetch" href="/assets/js/19.9a44ab06.js"><link rel="prefetch" href="/assets/js/20.a725d8a9.js"><link rel="prefetch" href="/assets/js/22.6531ba33.js"><link rel="prefetch" href="/assets/js/23.e896325e.js"><link rel="prefetch" href="/assets/js/24.5b2997d9.js"><link rel="prefetch" href="/assets/js/25.8132ce56.js"><link rel="prefetch" href="/assets/js/26.d82843cc.js"><link rel="prefetch" href="/assets/js/27.755801db.js"><link rel="prefetch" href="/assets/js/28.e0f2fe42.js"><link rel="prefetch" href="/assets/js/29.9e3e964e.js"><link rel="prefetch" href="/assets/js/3.4f1bfa5f.js"><link rel="prefetch" href="/assets/js/30.0d93d8c0.js"><link rel="prefetch" href="/assets/js/31.5a258105.js"><link rel="prefetch" href="/assets/js/32.01eccdfc.js"><link rel="prefetch" href="/assets/js/33.8bdc1d13.js"><link rel="prefetch" href="/assets/js/34.42dd9500.js"><link rel="prefetch" href="/assets/js/35.068b72f2.js"><link rel="prefetch" href="/assets/js/36.9a71a693.js"><link rel="prefetch" href="/assets/js/37.0fb0d67b.js"><link rel="prefetch" href="/assets/js/38.ddc45527.js"><link rel="prefetch" href="/assets/js/39.27efda84.js"><link rel="prefetch" href="/assets/js/4.dee10380.js"><link rel="prefetch" href="/assets/js/40.6a51707b.js"><link rel="prefetch" href="/assets/js/41.01317f9f.js"><link rel="prefetch" href="/assets/js/42.53532a55.js"><link rel="prefetch" href="/assets/js/43.2bc63cb8.js"><link rel="prefetch" href="/assets/js/44.98288f4e.js"><link rel="prefetch" href="/assets/js/45.3e342d9d.js"><link rel="prefetch" href="/assets/js/46.9f2f2178.js"><link rel="prefetch" href="/assets/js/47.ed65ba47.js"><link rel="prefetch" href="/assets/js/48.eeb0142e.js"><link rel="prefetch" href="/assets/js/49.14392009.js"><link rel="prefetch" href="/assets/js/5.8ac07946.js"><link rel="prefetch" href="/assets/js/50.d5ff2da0.js"><link rel="prefetch" href="/assets/js/51.dcb0a9fc.js"><link rel="prefetch" href="/assets/js/52.e82abfb9.js"><link rel="prefetch" href="/assets/js/53.763c3c23.js"><link rel="prefetch" href="/assets/js/54.ab02438d.js"><link rel="prefetch" href="/assets/js/55.ac67b7a9.js"><link rel="prefetch" href="/assets/js/56.73c510d5.js"><link rel="prefetch" href="/assets/js/57.1509ddd1.js"><link rel="prefetch" href="/assets/js/58.e3a68eb7.js"><link rel="prefetch" href="/assets/js/59.1146655a.js"><link rel="prefetch" href="/assets/js/6.6de9bd08.js"><link rel="prefetch" href="/assets/js/60.a9097dd5.js"><link rel="prefetch" href="/assets/js/61.fa9e23f4.js"><link rel="prefetch" href="/assets/js/62.37d68d68.js"><link rel="prefetch" href="/assets/js/63.572df829.js"><link rel="prefetch" href="/assets/js/64.1b72b1c0.js"><link rel="prefetch" href="/assets/js/65.fd79b640.js"><link rel="prefetch" href="/assets/js/66.9b2fff6b.js"><link rel="prefetch" href="/assets/js/67.04661d8a.js"><link rel="prefetch" href="/assets/js/68.fe48f321.js"><link rel="prefetch" href="/assets/js/69.36199326.js"><link rel="prefetch" href="/assets/js/7.353968d1.js"><link rel="prefetch" href="/assets/js/70.5168cc3f.js"><link rel="prefetch" href="/assets/js/71.ab3249b5.js"><link rel="prefetch" href="/assets/js/72.39dfcf5c.js"><link rel="prefetch" href="/assets/js/8.2ec57bc2.js"><link rel="prefetch" href="/assets/js/9.841d4d9d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.323fc85a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">james9527的前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人简历" class="dropdown-title"><span class="title">个人简历</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人简历" class="mobile-dropdown-title"><span class="title">个人简历</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/about/me.html" class="nav-link">
+  自我介绍&amp;项目经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/basic/js.html" class="nav-link">
+  前端基础JS系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/basic/css.html" class="nav-link">
+  前端基础CSS系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端进阶" class="dropdown-title"><span class="title">前端进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端进阶" class="mobile-dropdown-title"><span class="title">前端进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/advanced/js.html" class="nav-link">
+  Javascript进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/css.html" class="nav-link">
+  CSS进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/node.html" class="nav-link">
+  Node.js进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/performance.html" class="nav-link">
+  性能优化系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><span class="title">前端工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工程化" class="mobile-dropdown-title"><span class="title">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-principle.html" class="nav-link">
+  Webpack核心概念
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/vue-cli.html" class="nav-link">
+  vue-cli中webpack相关配置
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-bug-list.html" class="nav-link">
+  Webpack踩坑清单
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="业务沉淀" class="dropdown-title"><span class="title">业务沉淀</span> <span class="arrow down"></span></button> <button type="button" aria-label="业务沉淀" class="mobile-dropdown-title"><span class="title">业务沉淀</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/work/nuxt-notes.html" class="nav-link">
+  Nuxt重构电商M站踩坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/sensors-analyse.html" class="nav-link">
+  神策数据分析简介及其应用
+</a></li><li class="dropdown-item"><!----> <a href="/blog/scratch/material.html" class="nav-link">
+  深入scratch
+</a></li><li class="dropdown-item"><!----> <a href="/blog/skulpt/introduce.html" class="nav-link">
+  深入skulpt
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/video-autoplay.html" class="nav-link">
+  H5支持Video视频自动播放技术调研
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-vue.html" class="nav-link">
+  运营侧权限控制（Vue版）
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-react.html" class="nav-link">
+  运营侧权限控制（React版）
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/work/home.html" class="nav-link">
+  前端开发手册
+</a></div><div class="nav-item"><a href="/blog/bookmark/home.html" class="nav-link">
+  常用网址
+</a></div><div class="nav-item"><a href="https://github.com/james9527" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人简历" class="dropdown-title"><span class="title">个人简历</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人简历" class="mobile-dropdown-title"><span class="title">个人简历</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/about/me.html" class="nav-link">
+  自我介绍&amp;项目经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/basic/js.html" class="nav-link">
+  前端基础JS系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/basic/css.html" class="nav-link">
+  前端基础CSS系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端进阶" class="dropdown-title"><span class="title">前端进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端进阶" class="mobile-dropdown-title"><span class="title">前端进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/advanced/js.html" class="nav-link">
+  Javascript进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/css.html" class="nav-link">
+  CSS进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/node.html" class="nav-link">
+  Node.js进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/performance.html" class="nav-link">
+  性能优化系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><span class="title">前端工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工程化" class="mobile-dropdown-title"><span class="title">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-principle.html" class="nav-link">
+  Webpack核心概念
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/vue-cli.html" class="nav-link">
+  vue-cli中webpack相关配置
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-bug-list.html" class="nav-link">
+  Webpack踩坑清单
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="业务沉淀" class="dropdown-title"><span class="title">业务沉淀</span> <span class="arrow down"></span></button> <button type="button" aria-label="业务沉淀" class="mobile-dropdown-title"><span class="title">业务沉淀</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/work/nuxt-notes.html" class="nav-link">
+  Nuxt重构电商M站踩坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/sensors-analyse.html" class="nav-link">
+  神策数据分析简介及其应用
+</a></li><li class="dropdown-item"><!----> <a href="/blog/scratch/material.html" class="nav-link">
+  深入scratch
+</a></li><li class="dropdown-item"><!----> <a href="/blog/skulpt/introduce.html" class="nav-link">
+  深入skulpt
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/video-autoplay.html" class="nav-link">
+  H5支持Video视频自动播放技术调研
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-vue.html" class="nav-link">
+  运营侧权限控制（Vue版）
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-react.html" class="nav-link">
+  运营侧权限控制（React版）
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/work/home.html" class="nav-link">
+  前端开发手册
+</a></div><div class="nav-item"><a href="/blog/bookmark/home.html" class="nav-link">
+  常用网址
+</a></div><div class="nav-item"><a href="https://github.com/james9527" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="react项目性能优化手段"><a href="#react项目性能优化手段" class="header-anchor">#</a> React项目性能优化手段</h2> <blockquote><p>在 React 项目中，有许多方法可以进行性能优化，以下是一些常见的手段：</p></blockquote> <ol><li>使用 React.memo() 或 PureComponent 优化组件。
+<code>React.memo()</code> 和 <code>PureComponent</code> 都可以用于优化组件性能，它们可以避免不必要的重新渲染，提高组件的渲染效率。React.memo() 是一个高阶组件，用于对函数式组件进行浅比较，如果组件的 props 没有改变，则不会重新渲染组件。PureComponent 是一个继承自 React.Component 的类组件，它会自动对组件的 props 和 state 进行浅比较，如果没有改变，则不会重新渲染组件。</li> <li>使用 shouldComponentUpdate() 或 shouldUpdateComponent() 避免不必要的重新渲染。
+<code>shouldComponentUpdate()</code>是 React.Component 的一个生命周期函数，用于控制组件是否需要重新渲染。在 shouldComponentUpdate() 中可以通过比较前后 props 和 state 的值，来决定是否需要重新渲染组件。在函数式组件中，可以使用 React.memo() 的第二个参数来实现 shouldComponentUpdate() 的功能。</li> <li>使用 <code>React.lazy()</code> 和 <code>Suspense</code> 实现代码分割和懒加载。
+React.lazy() 是一个用于实现代码分割和懒加载的 API，它可以将组件的加载延迟到需要使用时再进行加载。使用 React.lazy() 可以减少页面的初始加载时间和资源消耗。Suspense 是一个用于优化异步加载体验的 API，它可以在异步加载完成前显示一个 loading 界面，提高用户体验。</li> <li>使用 memoization 缓存计算结果。
+memoization 是一种缓存计算结果的技术，可以避免重复计算和提高计算效率。在 React 项目中，可以使用 <code>useMemo()</code> 和 <code>useCallback()</code> 来实现 memoization。useMemo() 可以缓存计算结果，并在依赖项发生变化时重新计算。useCallback() 可以缓存函数，并在依赖项发生变化时重新创建函数。</li> <li>使用Immutable.js实现数据不可变
+使用 <code>Immutable.js</code> 是一种优化 React 项目性能的方式之一。Immutable.js 是一个 JavaScript 库，提供了一些不可变的数据结构，例如 List、Map、Set 等，这些数据结构可以避免数据的深拷贝和浅拷贝，从而提高数据的访问效率和渲染效率。
+在 React 项目中，使用 Immutable.js 可以避免不必要的数据更新和重新渲染，从而提高组件的性能。通常情况下，当组件的 props 或 state 发生变化时，React 会进行一次浅比较，如果发现没有实际变化，则不会重新渲染组件。但是，如果 props 或 state 中包含了复杂的嵌套对象或数组，浅比较可能会出现误判，导致不必要的重新渲染。使用 Immutable.js 可以避免这种情况发生，从而提高组件的性能。
+另外，Immutable.js 还提供了一些方便的 API，例如 withMutations()、update()、merge() 等，可以方便地对不可变数据进行修改和更新。同时，Immutable.js 还可以与 React.memo()、shouldComponentUpdate() 等优化手段结合使用，进一步提高组件的性能。
+需要注意的是，使用 Immutable.js 也会带来一些额外的开销和复杂性，需要根据项目实际情况进行权衡和选择。</li> <li>使用 Webpack、Babel 等工具进行打包和编译优化。
+<code>Webpack、Babel</code> 等工具可以对代码进行打包和编译优化，减少代码体积和提高代码效率。例如，可以使用 Webpack 的 <code>tree shaking</code> 功能来删除未使用的代码块，使用 Babel 的转译功能来兼容不同浏览器。</li></ol> <p>以上是一些常见的 React 项目性能优化手段，当然还有其他一些优化技巧和工具，具体应该根据项目实际情况进行选择和应用。</p> <blockquote><p>除了上述提到的优化手段之外，还有一些其他的优化技巧和工具可供选择，下面是一些例子：</p></blockquote> <ol><li>使用 React Profiler 进行性能分析
+<code>React Profiler</code> 是 React 提供的一个性能分析工具，可以帮助开发者识别应用中的性能瓶颈，从而进行优化。使用 React Profiler 可以查看组件的渲染时间、更新次数等信息，了解组件的性能表现，并针对性地进行优化。</li> <li>使用 Web Workers 进行多线程处理
+<code>Web Workers</code> 是 HTML5 提供的一个多线程处理技术，可以将一些耗时的计算任务放在后台线程中进行处理，避免阻塞主线程，从而提高应用的响应速度和性能。在 React 项目中，可以使用 Web Workers 来处理一些复杂的计算任务，例如图像处理、数据分析等。</li> <li>使用 CDN 加速资源加载
+<code>CDN（Content Delivery Network）</code>是一种分布式存储和传输技术，可以将静态资源分发到全球各地的服务器上，从而加速资源加载和提高访问速度。在 React 项目中，可以使用 CDN 来加速第三方库和公共资源的加载，例如 React、React Router、Bootstrap 等。</li> <li>使用 Service Worker 实现离线缓存
+<code>Service Worker</code> 是一种浏览器技术，可以在离线状态下缓存应用的静态资源和数据，从而实现离线访问和提高用户体验。在 React 项目中，可以使用 Service Worker 来实现离线缓存，例如将应用的主要文件和数据缓存到本地，当用户处于离线状态时，仍然可以访问应用的部分内容。</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.283f9e00.js" defer></script><script src="/assets/js/2.cf4fc302.js" defer></script><script src="/assets/js/21.19d529db.js" defer></script>
+  </body>
+</html>

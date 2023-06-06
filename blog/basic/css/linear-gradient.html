@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>linear-gradient()原理 | james9527的前端日志</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="https://github.githubassets.com/favicon.ico">
+    <meta name="description" content="欢迎访问我的前端日志~">
+    <meta name="theme-color" content="#3eaf7c">
+    
+    <link rel="preload" href="/assets/css/0.styles.323fc85a.css" as="style"><link rel="preload" href="/assets/js/app.283f9e00.js" as="script"><link rel="preload" href="/assets/js/2.cf4fc302.js" as="script"><link rel="preload" href="/assets/js/27.755801db.js" as="script"><link rel="prefetch" href="/assets/js/10.57db1124.js"><link rel="prefetch" href="/assets/js/11.9a8c3416.js"><link rel="prefetch" href="/assets/js/12.36137e9b.js"><link rel="prefetch" href="/assets/js/13.b2004519.js"><link rel="prefetch" href="/assets/js/14.659dc65b.js"><link rel="prefetch" href="/assets/js/15.2652d2db.js"><link rel="prefetch" href="/assets/js/16.d6c5f911.js"><link rel="prefetch" href="/assets/js/17.d4188079.js"><link rel="prefetch" href="/assets/js/18.e75dbabc.js"><link rel="prefetch" href="/assets/js/19.9a44ab06.js"><link rel="prefetch" href="/assets/js/20.a725d8a9.js"><link rel="prefetch" href="/assets/js/21.19d529db.js"><link rel="prefetch" href="/assets/js/22.6531ba33.js"><link rel="prefetch" href="/assets/js/23.e896325e.js"><link rel="prefetch" href="/assets/js/24.5b2997d9.js"><link rel="prefetch" href="/assets/js/25.8132ce56.js"><link rel="prefetch" href="/assets/js/26.d82843cc.js"><link rel="prefetch" href="/assets/js/28.e0f2fe42.js"><link rel="prefetch" href="/assets/js/29.9e3e964e.js"><link rel="prefetch" href="/assets/js/3.4f1bfa5f.js"><link rel="prefetch" href="/assets/js/30.0d93d8c0.js"><link rel="prefetch" href="/assets/js/31.5a258105.js"><link rel="prefetch" href="/assets/js/32.01eccdfc.js"><link rel="prefetch" href="/assets/js/33.8bdc1d13.js"><link rel="prefetch" href="/assets/js/34.42dd9500.js"><link rel="prefetch" href="/assets/js/35.068b72f2.js"><link rel="prefetch" href="/assets/js/36.9a71a693.js"><link rel="prefetch" href="/assets/js/37.0fb0d67b.js"><link rel="prefetch" href="/assets/js/38.ddc45527.js"><link rel="prefetch" href="/assets/js/39.27efda84.js"><link rel="prefetch" href="/assets/js/4.dee10380.js"><link rel="prefetch" href="/assets/js/40.6a51707b.js"><link rel="prefetch" href="/assets/js/41.01317f9f.js"><link rel="prefetch" href="/assets/js/42.53532a55.js"><link rel="prefetch" href="/assets/js/43.2bc63cb8.js"><link rel="prefetch" href="/assets/js/44.98288f4e.js"><link rel="prefetch" href="/assets/js/45.3e342d9d.js"><link rel="prefetch" href="/assets/js/46.9f2f2178.js"><link rel="prefetch" href="/assets/js/47.ed65ba47.js"><link rel="prefetch" href="/assets/js/48.eeb0142e.js"><link rel="prefetch" href="/assets/js/49.14392009.js"><link rel="prefetch" href="/assets/js/5.8ac07946.js"><link rel="prefetch" href="/assets/js/50.d5ff2da0.js"><link rel="prefetch" href="/assets/js/51.dcb0a9fc.js"><link rel="prefetch" href="/assets/js/52.e82abfb9.js"><link rel="prefetch" href="/assets/js/53.763c3c23.js"><link rel="prefetch" href="/assets/js/54.ab02438d.js"><link rel="prefetch" href="/assets/js/55.ac67b7a9.js"><link rel="prefetch" href="/assets/js/56.73c510d5.js"><link rel="prefetch" href="/assets/js/57.1509ddd1.js"><link rel="prefetch" href="/assets/js/58.e3a68eb7.js"><link rel="prefetch" href="/assets/js/59.1146655a.js"><link rel="prefetch" href="/assets/js/6.6de9bd08.js"><link rel="prefetch" href="/assets/js/60.a9097dd5.js"><link rel="prefetch" href="/assets/js/61.fa9e23f4.js"><link rel="prefetch" href="/assets/js/62.37d68d68.js"><link rel="prefetch" href="/assets/js/63.572df829.js"><link rel="prefetch" href="/assets/js/64.1b72b1c0.js"><link rel="prefetch" href="/assets/js/65.fd79b640.js"><link rel="prefetch" href="/assets/js/66.9b2fff6b.js"><link rel="prefetch" href="/assets/js/67.04661d8a.js"><link rel="prefetch" href="/assets/js/68.fe48f321.js"><link rel="prefetch" href="/assets/js/69.36199326.js"><link rel="prefetch" href="/assets/js/7.353968d1.js"><link rel="prefetch" href="/assets/js/70.5168cc3f.js"><link rel="prefetch" href="/assets/js/71.ab3249b5.js"><link rel="prefetch" href="/assets/js/72.39dfcf5c.js"><link rel="prefetch" href="/assets/js/8.2ec57bc2.js"><link rel="prefetch" href="/assets/js/9.841d4d9d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.323fc85a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">james9527的前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人简历" class="dropdown-title"><span class="title">个人简历</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人简历" class="mobile-dropdown-title"><span class="title">个人简历</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/about/me.html" class="nav-link">
+  自我介绍&amp;项目经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/basic/js.html" class="nav-link">
+  前端基础JS系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/basic/css.html" class="nav-link">
+  前端基础CSS系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端进阶" class="dropdown-title"><span class="title">前端进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端进阶" class="mobile-dropdown-title"><span class="title">前端进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/advanced/js.html" class="nav-link">
+  Javascript进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/css.html" class="nav-link">
+  CSS进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/node.html" class="nav-link">
+  Node.js进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/performance.html" class="nav-link">
+  性能优化系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><span class="title">前端工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工程化" class="mobile-dropdown-title"><span class="title">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-principle.html" class="nav-link">
+  Webpack核心概念
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/vue-cli.html" class="nav-link">
+  vue-cli中webpack相关配置
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-bug-list.html" class="nav-link">
+  Webpack踩坑清单
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="业务沉淀" class="dropdown-title"><span class="title">业务沉淀</span> <span class="arrow down"></span></button> <button type="button" aria-label="业务沉淀" class="mobile-dropdown-title"><span class="title">业务沉淀</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/work/nuxt-notes.html" class="nav-link">
+  Nuxt重构电商M站踩坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/sensors-analyse.html" class="nav-link">
+  神策数据分析简介及其应用
+</a></li><li class="dropdown-item"><!----> <a href="/blog/scratch/material.html" class="nav-link">
+  深入scratch
+</a></li><li class="dropdown-item"><!----> <a href="/blog/skulpt/introduce.html" class="nav-link">
+  深入skulpt
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/video-autoplay.html" class="nav-link">
+  H5支持Video视频自动播放技术调研
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-vue.html" class="nav-link">
+  运营侧权限控制（Vue版）
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-react.html" class="nav-link">
+  运营侧权限控制（React版）
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/work/home.html" class="nav-link">
+  前端开发手册
+</a></div><div class="nav-item"><a href="/blog/bookmark/home.html" class="nav-link">
+  常用网址
+</a></div><div class="nav-item"><a href="https://github.com/james9527" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人简历" class="dropdown-title"><span class="title">个人简历</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人简历" class="mobile-dropdown-title"><span class="title">个人简历</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/about/me.html" class="nav-link">
+  自我介绍&amp;项目经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/basic/js.html" class="nav-link">
+  前端基础JS系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/basic/css.html" class="nav-link">
+  前端基础CSS系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端进阶" class="dropdown-title"><span class="title">前端进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端进阶" class="mobile-dropdown-title"><span class="title">前端进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/advanced/js.html" class="nav-link">
+  Javascript进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/css.html" class="nav-link">
+  CSS进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/node.html" class="nav-link">
+  Node.js进阶系列
+</a></li><li class="dropdown-item"><!----> <a href="/blog/advanced/performance.html" class="nav-link">
+  性能优化系列
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><span class="title">前端工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工程化" class="mobile-dropdown-title"><span class="title">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-principle.html" class="nav-link">
+  Webpack核心概念
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/vue-cli.html" class="nav-link">
+  vue-cli中webpack相关配置
+</a></li><li class="dropdown-item"><!----> <a href="/blog/fe-compile/webpack-bug-list.html" class="nav-link">
+  Webpack踩坑清单
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="业务沉淀" class="dropdown-title"><span class="title">业务沉淀</span> <span class="arrow down"></span></button> <button type="button" aria-label="业务沉淀" class="mobile-dropdown-title"><span class="title">业务沉淀</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/work/nuxt-notes.html" class="nav-link">
+  Nuxt重构电商M站踩坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/sensors-analyse.html" class="nav-link">
+  神策数据分析简介及其应用
+</a></li><li class="dropdown-item"><!----> <a href="/blog/scratch/material.html" class="nav-link">
+  深入scratch
+</a></li><li class="dropdown-item"><!----> <a href="/blog/skulpt/introduce.html" class="nav-link">
+  深入skulpt
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/video-autoplay.html" class="nav-link">
+  H5支持Video视频自动播放技术调研
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-vue.html" class="nav-link">
+  运营侧权限控制（Vue版）
+</a></li><li class="dropdown-item"><!----> <a href="/blog/work/operation-authority-react.html" class="nav-link">
+  运营侧权限控制（React版）
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/work/home.html" class="nav-link">
+  前端开发手册
+</a></div><div class="nav-item"><a href="/blog/bookmark/home.html" class="nav-link">
+  常用网址
+</a></div><div class="nav-item"><a href="https://github.com/james9527" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>linear-gradient()原理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/basic/css/linear-gradient.html#句法" class="sidebar-link">句法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/basic/css/linear-gradient.html#带有多个色标的渐变" class="sidebar-link">带有多个色标的渐变</a></li><li class="sidebar-sub-header"><a href="/blog/basic/css/linear-gradient.html#重复线性渐变" class="sidebar-link">重复线性渐变</a></li></ul></li><li><a href="/blog/basic/css/linear-gradient.html#笔记" class="sidebar-link">笔记</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/basic/css/linear-gradient.html#参考" class="sidebar-link">参考</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><blockquote><p>CSS函数linear-gradient()创建一个图像，该图像代表颜色的线性渐变。结果是一个CSS对象，类型<code>gradient</code>是的一种特殊形式image。</p></blockquote> <p>像任何其他梯度一样，线性梯度也没有 内在维数。也就是说，它没有预设或自然大小，也没有纵横比。其特定大小将调整为适用于它的元素的大小。
+线性渐变由轴（渐变线）定义，其中每个点表示不同颜色的起点。垂直于所述线的梯度线 有一个单一的颜色，对每个点的梯度线。</p> <p>渐变线由包含渐变图像的框的中心和角度定义。渐变的颜色由不同的点定义。起点，终点和中间的可选颜色变化点。
+起点是渐变线上颜色开始的点。它是由渐变线与其垂直线之间的交点定义的，该线穿过同一象限中的容器角。
+同样，终点是渐变线上到达颜色终点的点。它也由容器的最近角所产生的梯度线和垂直线之间的交点定义，但是当反射点与容器盒的中心重合时，更容易找到起点的对称性。</p> <p>起点和终点的这些有点复杂的定义将我们引向一个有趣的属性，称为“魔角”  ：最接近起点和终点的角与各自的起点和终点具有相同的颜色。
+您不仅可以指定起点和终点的颜色，还可以指定更多。通过在渐变线上的更改点定义其他颜色，Web开发人员可以在开始和结束颜色之间创建更个性化的过渡，或生成多色渐变。</p> <p>线性渐变函数的语法不允许重复渐变，但是通过使用颜色变化点，可以产生类似的效果。对于真正的渐变重复，可以使用CSS属性repeating-linear-gradient。
+如果隐式定义了色标点的位置，则将其放置在色标点之前和之后的中间。也可以使用<code>length</code>或<code>percentage</code>CSS数据类型明确定义位置。</p> <p>渐变定义为CSSimage数据类型。因此，它们可以在CSS中任何需要图像数据类型的地方使用。但是，Gecko当前仅支持CSS渐变作为background-image属性的值以及简写形式background。
+因此，它将linear-gradient无法使用background-color，其他属性也无法使用<code>color</code>。</p> <h2 id="句法"><a href="#句法" class="header-anchor">#</a> 句法</h2> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token function">linear-gradient</span><span class="token punctuation">(</span> 45deg<span class="token punctuation">,</span> blue<span class="token punctuation">,</span> red <span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">/* A gradient on 45deg axis starting blue and finishing red */</span>
+<span class="token function">linear-gradient</span><span class="token punctuation">(</span> to left top<span class="token punctuation">,</span> blue<span class="token punctuation">,</span> red<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">/* A gradient going from the bottom right to the top left starting blue and
+                                                  finishing red */</span>
+
+<span class="token function">linear-gradient</span><span class="token punctuation">(</span> 0deg<span class="token punctuation">,</span> blue<span class="token punctuation">,</span> green 40%<span class="token punctuation">,</span> red <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* A gradient going from the bottom to top, starting blue, being green after 40%
+                                                  and finishing red */</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p><code>side-or-corner</code>表示渐变线起点的位置。它由两个关键字组成：第一个关键字指示水平边left或right，第二个关键字指示垂直边top或bottom。顺序无关紧要，每个关键字都是可选的。值<code>to top，to bottom，to left和to right</code>分别被转换成角度<code>0deg，180deg，270deg，90deg</code>。其他的则转换为一个角度，该角度使起点与所描述的拐角处在同一象限中，从而使起点和拐角所定义的线垂直于渐变线。这样，所描述的颜色<code>color-stop</code>将完全适用于拐角点。有时称为“魔角”属性。渐变线的终点是中心框另一方向上起点的对称点。</p> <div class="language-css line-numbers-mode"><pre class="language-css"><code>//例如：
+<span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>90deg<span class="token punctuation">,</span> #FF5FD2 0%<span class="token punctuation">,</span> #B20FD3 100%<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+等同 
+<span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> #FF5FD2 0%<span class="token punctuation">,</span> #B20FD3 100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><code>angle</code>渐变的方向角。请参阅<a href="https://developer.mozilla.org/es/docs/Web/CSS/angle" target="_blank" rel="noopener noreferrer">angle<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。
+<code>color-stop</code>该值由一个<code>color</code>值组成，后跟一个可选的停止位置（<code>length</code>沿梯度轴的百分比或a ）。CSS渐变中色标的渲染遵循与SVG渐变中色标相同的规则。</p> <h3 id="带有多个色标的渐变"><a href="#带有多个色标的渐变" class="header-anchor">#</a> 带有多个色标的渐变</h3> <p>如果第一个色标没有<code>length</code>或<code>percentage</code>，则默认为0％。如果最后一个色标没有<code>length</code>或<code>percentage</code>，则默认为100％。如果色标没有指定的位置，并且不是第一个或最后一个色标，则将其分配为上一个色标和下一个色标之间一半的位置。
+必须按顺序指定色标。在根据需要为第一个和最后一个停靠点分配默认值之后，如果一个色标的指定位置小于列表中任何一个色标的指定位置，则其位置将更改为等于最大位置色标之前的指定位置。
+渐变制成的彩虹。</p> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> red<span class="token punctuation">,</span> orange<span class="token punctuation">,</span> yellow<span class="token punctuation">,</span> green<span class="token punctuation">,</span> blue<span class="token punctuation">,</span> indigo<span class="token punctuation">,</span>violet<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="重复线性渐变"><a href="#重复线性渐变" class="header-anchor">#</a> 重复线性渐变</h3> <p>所述linear-gradient不允许重复梯度。默认情况下，渐变将拉伸以填充其上定义的元素。有关此功能，请参见repeating-linear-gradient。
+使用透明度
+线性与透明度</p> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom right<span class="token punctuation">,</span> red<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>background-size如果使用固定单位指定所有点和长度（而不是相对于或相对于的值的百分比或关键字），则渐变背景不会受到影响background-size。</p> <h2 id="笔记"><a href="#笔记" class="header-anchor">#</a> 笔记</h2> <p>如果background-image将<code>body</code>标记的属性设置为linear-gradient，则除非min-height将文档根目录（例如<code>html</code>标记）的属性设置为100％，否则渐变将不会填充浏览器屏幕。</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <p><a href="https://developer.mozilla.org/es/docs/Web/CSS/linear-gradient()" target="_blank" rel="noopener noreferrer">MDN文档 -- linear-gradient()<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.283f9e00.js" defer></script><script src="/assets/js/2.cf4fc302.js" defer></script><script src="/assets/js/27.755801db.js" defer></script>
+  </body>
+</html>
